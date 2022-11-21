@@ -1,0 +1,17 @@
+app:
+  logFile: log/default.log
+  httpIp: 0.0.0.0
+  httpPort: 8009
+  runModel: release
+socket:
+  serverIp: 0.0.0.0
+  serverPort: 8010
+redis:
+  addr: 127.0.0.1
+  port: 6379
+  pass: ""
+  db: 0
+  size: 30
+  conns: 30
+
+
