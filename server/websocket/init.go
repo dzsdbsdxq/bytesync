@@ -74,6 +74,7 @@ func webSocketFunc(writer http.ResponseWriter, request *http.Request) {
 
 	currentTime := uint64(time.Now().Unix())
 	client := NewClient(conn.RemoteAddr().String(), conn, currentTime)
+	fmt.Println("webSocket client:", client)
 
 	go client.read()
 	go client.write()

@@ -20,6 +20,7 @@ func InitRouter() *gin.Engine {
 	//r.POST("/api/getWxOpenId", controller.GetWxOpenId)
 	r.POST("/api/newPcConnect", controller.NewConnect)
 	r.POST("/api/checkOwner", controller.CheckOwner)
+	r.POST("/api/login", controller.Login)
 	r.POST("/api/sendData", controller.SendData)
 	r.POST("/api/logout", controller.Logout)
 	r.POST("/api/saveDoc", controller.SaveDoc)

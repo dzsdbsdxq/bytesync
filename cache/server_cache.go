@@ -85,6 +85,7 @@ func GetServerAll(currentTime uint64) (servers []*models.Server, err error) {
 	fmt.Println("GetServerAll", key, string(valByte))
 
 	serverMap, err := redisClient.HGetAll(key).Result()
+	fmt.Println("setServerInfo err:", serverMap, err)
 	if err != nil {
 		fmt.Println("SetServerInfo", key, err)
 

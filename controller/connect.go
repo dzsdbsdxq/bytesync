@@ -3,6 +3,7 @@ package controller
 import (
 	"EditSync/cache"
 	"EditSync/common"
+	"EditSync/middleware"
 	"EditSync/models"
 	"EditSync/server/websocket"
 	"fmt"
@@ -24,6 +25,13 @@ func NewConnect(c *gin.Context) {
 	//自动创建用户ID
 	userId := common.GetUserIdByRandom()
 
+	//检查redis是否安装启动
+	_, err := middleware.GetClient().Ping().Result()
+	if err != nil {
+		common.RespFunc(c, http.StatusBadRequest, common.ServerError, "")
+		return
+	}
+
 	//将房间号注册到系统中
 	roomOnline := &models.RoomOnline{
 		RoomId:     roomId,
@@ -44,6 +52,35 @@ func NewConnect(c *gin.Context) {
 		"roomDesc":   roomOnline.RoomDesc,
 		"createTime": roomCTime,
 	})
+}
+
+func Login(c *gin.Context) {
+	roomId := com.StrTo(c.PostForm("roomId")).String()
+	//获取房间信息
+	roomOnline, err := cache.GetRoomOnlineInfo(roomId)
+	if err != nil {
+		common.RespFunc(c, http.StatusBadRequest, common.RoomInfoNotExist, models.Json{})
+		return
+	}
+	//检查redis是否安装启动
+	_, err = middleware.GetClient().Ping().Result()
+	if err != nil {
+		common.RespFunc(c, http.StatusBadRequest, common.ServerError, "")
+		return
+	}
+
+	//自动创建用户ID
+	userId := common.GetUserIdByRandom()
+
+	//返回房间的信息和用户ID
+	common.RespFunc(c, http.StatusOK, common.OK, models.Json{
+		"roomId":    roomOnline.RoomId,
+		"roomOwner": roomOnline.RoomOwner,
+		"userId":    userId,
+		"roomTitle": roomOnline.RoomTitle,
+		"roomDesc":  roomOnline.RoomDesc,
+	})
+
 }
 
 func CheckOwner(c *gin.Context) {

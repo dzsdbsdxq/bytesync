@@ -3,6 +3,7 @@ package main
 import (
 	"EditSync/middleware"
 	"EditSync/router"
+	"EditSync/server/task"
 	"EditSync/server/websocket"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -21,6 +22,10 @@ func main() {
 	router.WebSocketInit()
 
 	go websocket.StartWebSocket()
+	// 定时任务
+	task.Init()
+	// 服务注册
+	task.ServerInit()
 
 	r := router.InitRouter()
 	base := fmt.Sprintf("%s:%d", viper.GetString("app.httpIp"), viper.GetInt("app.httpPort"))

@@ -16,9 +16,7 @@ func NewClient() {
 		PoolSize:     viper.GetInt("redis.size"),
 		MinIdleConns: viper.GetInt("redis.conns"),
 	})
-	pong, err := client.Ping().Result()
-	fmt.Println("init redis:", pong, err)
-	//Output:PONG,<nil>
+
 }
 
 func GetClient() *redis.Client {

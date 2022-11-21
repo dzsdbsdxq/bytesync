@@ -29,14 +29,15 @@ type Client struct {
 	LoginTime     uint64          //登录时间，登录以后才有
 }
 
-func NewClient(addr string, socket *websocket.Conn, firstTime uint64) *Client {
-	return &Client{
+func NewClient(addr string, socket *websocket.Conn, firstTime uint64) (client *Client) {
+	client = &Client{
 		Addr:          addr,
 		Socket:        socket,
 		Send:          make(chan []byte, 100),
 		FirstTime:     firstTime,
 		HeartbeatTime: firstTime,
 	}
+	return
 }
 
 // GetKey 获取key

@@ -90,6 +90,10 @@ func HeartbeatController(client *Client, seq string, message []byte) (code uint3
 
 	code = common.OK
 	currentTime := uint64(time.Now().Unix())
+	data = models.Json{
+		"userId": "",
+		"roomId": "",
+	}
 
 	request := &models.HeartBeat{}
 	if err := json.Unmarshal(message, request); err != nil {
@@ -131,6 +135,11 @@ func HeartbeatController(client *Client, seq string, message []byte) (code uint3
 		fmt.Println("心跳接口 SetUserOnlineInfo", seq, client.RoomId, client.UserId, err)
 
 		return
+	}
+
+	data = models.Json{
+		"userId": client.UserId,
+		"roomId": client.RoomId,
 	}
 
 	return
