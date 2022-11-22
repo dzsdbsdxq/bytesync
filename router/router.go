@@ -1,8 +1,8 @@
 package router
 
 import (
-	"EditSync/controller"
-	"EditSync/server/websocket"
+	"bytesync/controller"
+	"bytesync/server/websocket"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"
 	"net/http"

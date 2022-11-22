@@ -1,8 +1,8 @@
 package websocket
 
 import (
-	"EditSync/common"
-	"EditSync/models"
+	"bytesync/common"
+	"bytesync/models"
 	"fmt"
 	"github.com/goccy/go-json"
 	"sync"

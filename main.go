@@ -1,10 +1,10 @@
 package main
 
 import (
-	"EditSync/middleware"
-	"EditSync/router"
-	"EditSync/server/task"
-	"EditSync/server/websocket"
+	"bytesync/middleware"
+	"bytesync/router"
+	"bytesync/server/task"
+	"bytesync/server/websocket"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/viper"

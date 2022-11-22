@@ -7,7 +7,7 @@
 
 package models
 
-import "EditSync/common"
+import "bytesync/common"
 
 const (
 	MessageTypeText = "text"

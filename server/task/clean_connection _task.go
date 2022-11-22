@@ -8,7 +8,7 @@
 package task
 
 import (
-	"EditSync/server/websocket"
+	"bytesync/server/websocket"
 	"fmt"
 	"runtime/debug"
 	"time"

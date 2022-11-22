@@ -1,11 +1,11 @@
-module EditSync
+module bytesync
 
 go 1.19
 
 require (
 	github.com/gin-gonic/gin v1.8.1
 	github.com/go-redis/redis v6.15.9+incompatible
-	github.com/goccy/go-json v0.9.7
+	github.com/goccy/go-json v0.9.11
 	github.com/gorilla/websocket v1.5.0
 	github.com/satori/go.uuid v1.2.0
 	github.com/spf13/viper v1.14.0
@@ -36,7 +36,7 @@ require (
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.1 // indirect
 	github.com/ugorji/go/codec v1.2.7 // indirect
-	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa // indirect
+	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e // indirect
 	golang.org/x/net v0.2.0 // indirect
 	golang.org/x/sys v0.2.0 // indirect
 	golang.org/x/text v0.4.0 // indirect

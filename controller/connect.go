@@ -1,11 +1,11 @@
 package controller
 
 import (
-	"EditSync/cache"
-	"EditSync/common"
-	"EditSync/middleware"
-	"EditSync/models"
-	"EditSync/server/websocket"
+	"bytesync/cache"
+	"bytesync/common"
+	"bytesync/middleware"
+	"bytesync/models"
+	"bytesync/server/websocket"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/unknwon/com"

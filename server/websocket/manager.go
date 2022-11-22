@@ -1,9 +1,9 @@
 package websocket
 
 import (
-	"EditSync/cache"
-	"EditSync/common"
-	"EditSync/models"
+	"bytesync/cache"
+	"bytesync/common"
+	"bytesync/models"
 	"fmt"
 	"sync"
 	"time"

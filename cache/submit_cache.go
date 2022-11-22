@@ -8,7 +8,7 @@
 package cache
 
 import (
-	"EditSync/middleware"
+	"bytesync/middleware"
 	"fmt"
 )
 

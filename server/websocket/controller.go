@@ -1,9 +1,9 @@
 package websocket
 
 import (
-	"EditSync/cache"
-	"EditSync/common"
-	"EditSync/models"
+	"bytesync/cache"
+	"bytesync/common"
+	"bytesync/models"
 	"encoding/json"
 	"fmt"
 	"github.com/go-redis/redis"

@@ -8,8 +8,8 @@
 package cache
 
 import (
-	"EditSync/middleware"
-	"EditSync/models"
+	"bytesync/middleware"
+	"bytesync/models"
 	"encoding/json"
 	"fmt"
 	"strconv"

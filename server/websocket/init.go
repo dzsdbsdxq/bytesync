@@ -1,7 +1,7 @@
 package websocket
 
 import (
-	"EditSync/models"
+	"bytesync/models"
 	"fmt"
 	"github.com/gorilla/websocket"
 	"github.com/spf13/viper"
